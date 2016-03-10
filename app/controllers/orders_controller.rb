@@ -22,6 +22,17 @@ class OrdersController < ApplicationController
     end
   end
 
+  def add
+    @order = Order.find(params[:id])
+    order_item = @order.order_items.build(item_id: params[:item_id])
+     #take items id and build a new order item into the order
+    if order_item.save
+      render json: order_item, status: :created
+    else
+      render json: order_item.errors, status: :unprocessable_entity
+  end
+
+  end
   private
 
     def order_params
