@@ -24,7 +24,9 @@ class OrdersController < ApplicationController
 
   def add
     @order = Order.find(params[:id])
-    order_item = @order.order_items.build(item_id: params[:item_id])
+    order_item = OrderItem.where(order_id: @order.id, item_id: params[:item_id]).first.increment(:quantity) rescue
+      @order.order_items.build(item_id: params[:item_id]) #build a new order item if first instruction fails
+
      #take items id and build a new order item into the order
     if order_item.save
       render json: order_item, status: :created
