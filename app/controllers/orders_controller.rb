@@ -32,9 +32,22 @@ class OrdersController < ApplicationController
       render json: order_item, status: :created
     else
       render json: order_item.errors, status: :unprocessable_entity
-  end
+    end
 
   end
+
+  def pay
+    @order = Order.find(params[:id])
+    if @order.total_amount == params[:amount]
+      @receipt = Receipt.new(order: @order, payment_method: params[:payment_method])
+      if @receipt.save
+        render json: @receipt, status: 204 #no content
+      else
+        render json: @receipt.errors, status: 422
+    end
+  end
+
+
   private
 
     def order_params
