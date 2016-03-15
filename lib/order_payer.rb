@@ -1,4 +1,5 @@
 class OrderPayer
+  # extract core logic of our business into own class
   attr_reader :order, :status, :message, :receipt
 
   def initialize(order)
