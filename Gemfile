@@ -9,12 +9,13 @@ gem 'kaminari'
 
 group :test, :development do
   gem 'hirb'
+  gem 'pry-rails'
+  gem 'awesome_print', '~> 1.6', '>= 1.6.1'
 end
 
 group :test do
   gem 'minitest-utils', require: "minitest/utils"
   gem 'rack-test', require: "rack/test"
-  gem 'pry-rails'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
