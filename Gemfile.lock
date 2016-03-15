@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 54ddbe285173ae8ca2b62294f151add40a015314
+  specs:
+    active_model_serializers (0.10.0.rc4)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -118,6 +127,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
   awesome_print (~> 1.6, >= 1.6.1)
   hirb
   kaminari

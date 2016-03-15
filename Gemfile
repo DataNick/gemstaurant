@@ -6,7 +6,7 @@ gem 'rails-api'
 gem 'spring', :group => :development
 gem 'sqlite3'
 gem 'kaminari'
-
+gem 'active_model_serializers', github: "rails-api/active_model_serializers"
 group :test, :development do
   gem 'hirb'
   gem 'pry-rails'
