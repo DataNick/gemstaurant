@@ -53,6 +53,8 @@ GEM
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    minitest-utils (0.2.7)
+      minitest
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pry (0.10.3)
@@ -111,7 +113,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  minitest-utils
   pry-rails
+  rack-test
   rails (= 4.2.6)
   rails-api
   spring

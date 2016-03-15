@@ -10,8 +10,14 @@ gem 'spring', :group => :development
 
 gem 'sqlite3'
 
+group :test, :development do
+  gem 'pry-rails'
+end
 
-gem 'pry-rails', :group => :development
+group :test do
+  gem 'minitest-utils', require: "minitest/utils"
+  gem 'rack-test', require: "rack/test"
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
