@@ -2,21 +2,19 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.6'
-
 gem 'rails-api'
-
 gem 'spring', :group => :development
-
-
 gem 'sqlite3'
+gem 'kaminari'
 
 group :test, :development do
-  gem 'pry-rails'
+  gem 'hirb'
 end
 
 group :test do
   gem 'minitest-utils', require: "minitest/utils"
   gem 'rack-test', require: "rack/test"
+  gem 'pry-rails'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
