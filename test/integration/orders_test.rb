@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'order_payer'
 
 class OrdersTest < MiniTest::Test
   include Rack::Test::Methods
