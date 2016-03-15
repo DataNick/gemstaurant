@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
     order_item = OrderItem.where(order_id: @order.id, item_id: params[:item_id]).first.increment(:quantity) rescue
       @order.order_items.build(item_id: params[:item_id]) #build a new order item if first instruction fails
 
-     #take items id and build a new order item into the order
+     #take items id and build a new order_item into the order
     if order_item.save
       render json: order_item, status: :created
     else
@@ -44,6 +44,9 @@ class OrdersController < ApplicationController
         render json: @receipt, status: 204 #no content
       else
         render json: @receipt.errors, status: 422
+      end
+    else
+      render json: { "message": "You didn't pay for the exact amount #{@order.total_amount}."}, status: 422
     end
   end
 

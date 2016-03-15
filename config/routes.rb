@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :orders, only: [:index]
   resources :tables, except: [:new, :edit] do
     resources :orders, only: [:create] do #/tables/:id/orders
-      post :add, on: :member
+      post :add, on: :member #match add method in orders controller
+      post :pay, on: :member #match pay method in orders controller
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
